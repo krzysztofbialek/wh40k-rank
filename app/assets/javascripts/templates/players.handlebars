@@ -1,0 +1,38 @@
+<div class='main-rank'>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Kod</th>
+        <th>Imię</th>
+        <th>Nick</th>
+        <th>Nazwisko</th>
+        <th>Miasto</th>
+        <th>Punkty</th>
+        <th>L. turniejów</th>
+        <th>Mastery</th>
+        <th>Chellki</th>
+        <th>Locale</th>
+        <th>Ligi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each}}
+        <tr>
+          <td>{{ increment _view.contentIndex }}</td>
+          <td>{{ leagueId }} </td>
+          <td>{{ firstName }}</td>
+          <td>{{ nick }} </td>
+          <td>{{ lastName }} </td>
+          <td>{{ city }} </td>
+          <td>{{ totalPoints }} </td>
+          <td>{{ tournamentsCount }} </td>
+          <td>{{ mastersCount }} </td>
+          <td>{{ challengersCount }} </td>
+          <td>{{ localsCount }} </td>
+          <td>{{ leaguesCount }} </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
