@@ -4,14 +4,22 @@
 
 <div class='main-rank'>
   <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#">Wszyscy gracze</a></li>
-    <li>{{#link-to 'top10'}}Top 10{{/link-to}}</li>
-    <li><a href="#">Turnieje</a></li>
+    {{#link-to 'top_ten' tagName="li"}}
+      <a {{bind-attr href="view.href"}}>Top 10</a>
+    {{/link-to}}
+    {{#link-to 'players' tagName="li"}}
+      <a {{bind-attr href="view.href"}}>Wszyscy gracze</a>
+    {{/link-to}}
+    {{#link-to 'tournaments' tagName="li"}}
+      <a {{bind-attr href="view.href"}}>Turnieje</a>
+    {{/link-to}}
   </ul>
 
   {{outlet}}
 </div>
 
-<footer>
-  <p class='center-text'>&copy;2014 Krzysztof Białek</p>
+<footer class='footer'>
+  <div class='container'>
+    <p class='center-text text-muted'>&copy;2014 Krzysztof Białek</p>
+  </div>
 </footer>

@@ -1,5 +1,5 @@
 Wh40kRank.Player = DS.Model.extend({
-  leagueId: DS.attr('string')
+  leagueId: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   nick: DS.attr('string'),
