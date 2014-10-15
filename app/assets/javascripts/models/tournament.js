@@ -1,6 +1,8 @@
 Wh40kRank.Tournament = DS.Model.extend({
   name: DS.attr('string'),
-  city: DS.attr('string')
+  city: DS.attr('string'),
+  type: DS.attr('string'),
+  start: DS.attr('string')
 });
 
 
