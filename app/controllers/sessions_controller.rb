@@ -12,5 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
+    head :ok
   end
 end

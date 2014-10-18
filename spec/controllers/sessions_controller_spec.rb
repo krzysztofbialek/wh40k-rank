@@ -4,7 +4,7 @@ describe SessionsController do
   let(:user) { double(id: 1, password: 'pass', email: 'test@example.com') }
   let(:params) { {email: 'test@example.com', password: 'pass'} }
 
-  describe "GET create" do
+  describe "POST create" do
     context "valid credentials" do
       before do
         expect(User).to receive(:find_by).and_return(user)
@@ -43,6 +43,18 @@ describe SessionsController do
         expect(response.status).to eq(422)
       end
     end
+  end
+
+  describe "DELETE destroy" do
+    before do
+      session[:user_id] = user.id
+    end
+
+    it "clears session" do
+      delete :destroy
+      expect(response.status).to eq(200)
+      expect(session[:user_id]).to be_nil
+    end 
   end
 
 end
