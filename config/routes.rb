@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  pots '/login', 'sessions#create'
-  delete '/loggout', 'sessions#destroy'
+  post '/login', to: 'sessions#create'
+  delete '/loggout', to: 'sessions#destroy'
 
   get 'sessions/destroy'
 
