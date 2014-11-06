@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   post '/login', to: 'sessions#create'
-  delete '/loggout', to: 'sessions#destroy'
+  get '/logged_in', to: 'sessions#check_if_logged_in'
+  delete '/logout', to: 'sessions#destroy'
 
   get 'sessions/destroy'
 

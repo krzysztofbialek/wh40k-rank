@@ -1,22 +1,31 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <a class="navbar-brand pull-left" href="#">Turnieje</a>
+    <ul class='nav navbar-nav pull-right'>
+        {{#if signedIn}}
+          <li>
+            {{#link-to 'tournaments.new' }}Dodaj  turniej{{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'logout' }}Wyloguj{{/link-to}}
+          </li>
+        {{else}}
+          <li>
+            {{#link-to 'login'}}Zaloguj{{/link-to}}
+          </li>
+        {{/if}}
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
 <header>
   <h1 class='center-text'>Ranking</h1>
 </header>
 
-<div class='main-rank'>
-  <ul class="nav nav-tabs" role="tablist">
-    {{#link-to 'top_ten' tagName="li"}}
-      <a {{bind-attr href="view.href"}}>Top 10</a>
-    {{/link-to}}
-    {{#link-to 'players' tagName="li"}}
-      <a {{bind-attr href="view.href"}}>Wszyscy gracze</a>
-    {{/link-to}}
-    {{#link-to 'tournaments' tagName="li"}}
-      <a {{bind-attr href="view.href"}}>Turnieje</a>
-    {{/link-to}}
-  </ul>
-
-  {{outlet}}
-</div>
+{{outlet}}
 
 <footer class='footer'>
   <div class='container'>
