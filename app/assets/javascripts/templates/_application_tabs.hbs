@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs" role="tablist">
+  {{#link-to 'dashboard.index' tagName="li"}}
+    <a {{bind-attr href="view.href"}}>Top 10</a>
+  {{/link-to}}
+  {{#link-to 'players' tagName="li"}}
+    <a {{bind-attr href="view.href"}}>Wszyscy gracze</a>
+  {{/link-to}}
+  {{#link-to 'tournaments' tagName="li"}}
+    <a {{bind-attr href="view.href"}}>Turnieje</a>
+  {{/link-to}}
+</ul>

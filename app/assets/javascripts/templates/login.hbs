@@ -1,0 +1,18 @@
+<h2 class='center-text'>Sign in</h2>
+
+<form role='form-horizontal', class='sign-in-form'>
+  <div class='form-group'>
+    <label for "email">Email</labelr><br />
+    {{input value=email class="form-control" placeholder="Enter email"}}
+  </div>
+  <div class='form-group'>
+    <label for "password">Password</labelr><br />
+    {{input type='password' value=password autocomplete="off" class="form-control" placeholder="Enter password"}}
+  </div>
+
+  <button class='btn btn-lg btn-primary btn-block' {{action "signIn"}}>
+    Sign In
+  </button>
+
+</form>
+
