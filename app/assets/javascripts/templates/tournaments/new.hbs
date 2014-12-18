@@ -1,51 +1,57 @@
 <h2 class='center-text'>Dodaj turniej</h2>
+<div class='row'>
+  <div class='col-xs-12 col-sm-3 col-md-3 col-lg-2'>
+    <form role='form', class='new-tournament-form format-form'>
+      <div class='form-group'>
+        <label for "name">Nazwa</labelr><br />
+        {{input value=name class="form-control" placeholder="Nazwa turnieju"}}
+      </div>
+      <div class='form-group'>
+        <label for "city">Miasto</labelr><br />
+        {{input value=city class="form-control" placeholder="Miasto turnieju"}}
+      </div>
 
-<form role='form', class='new-tournament-form format-form'>
-  <div class='form-group'>
-    <label for "name">Nazwa</labelr><br />
-    {{input value=name class="form-control" placeholder="Nazwa turnieju"}}
+      <div class='form-group'>
+        <label for "type">Ranga turnieju</labelr><br />
+        {{view "Ember.Select" content=names value=type}}
+      </div>
+
+      <div class='form-group'>
+        <label for "csv">Plik z wynikami</label><br />
+        {{view Wh40kRank.UploadFile file=csv name="csv" }}
+      </div>
+
+      <button class='btn btn-lg btn-primary btn-block' {{action "createTournament"}}>
+        Utwórz turniej
+      </button>
+
+
+    </form>
   </div>
-  <div class='form-group'>
-    <label for "city">Miasto</labelr><br />
-    {{input value=city class="form-control" placeholder="Miasto turnieju"}}
-  </div>
-
-  <div class='form-group'>
-    <label for "type">Ranga turnieju</labelr><br />
-    {{view "Ember.Select" content=names value=type}}
-  </div>
-
-  <div class='form-group'>
-    <label for "csv">Plik z wynikami</label><br />
-    {{view Wh40kRank.UploadFile file=csv name="csv" }}
-  </div>
-
-  <button class='btn btn-lg btn-primary btn-block' {{action "createTournament"}}>
-    Utwórz turniej
-  </button>
-
-
-</form>
-
-<table class='table table-striped'>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Nazwa</th>
-        <th>Miasto</th>
-        <th>Ranga</th>
-        <th>Data</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each result in attachment}}
+  <div class='col-xs-12 col-sm-9 col-md-9 col-lg-10'>
+    <table class='table table-striped pull-left tournament-preview'>
+      <thead>
         <tr>
-          <td>{{result.[1]}}</td>
-          <td>{{result.[2]}} </td>
-          <td>{{result.[3]}}</td>
-          <td>{{result.[4]}}</td>
-          <td>{{result.[5]}}</td>
+          <th>Miejsce</th>
+          <th>ID</th>
+          <th>Imie</th>
+          <th>Nazwisko</th>
+          <th>Ranga</th>
+          <th>Miasto</th>
         </tr>
-      {{/each}}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {{#each result in attachment}}
+          <tr>
+            <td>{{result.[0]}}</td>
+            <td>{{result.[1]}}</td>
+            <td>{{result.[2]}} </td>
+            <td>{{result.[3]}}</td>
+            <td>{{result.[4]}}</td>
+            <td>{{result.[5]}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

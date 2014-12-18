@@ -5,7 +5,8 @@ Wh40kRank.TournamentsNewController = Ember.ArrayController.extend({
 
   test: function(){
     csv_to_parse = this.get('csv');
-    parsed_csv = $.csv.toArrays(csv_to_parse);
+    encoded_csv = TextEncoder.new('utf-8').encode(csv_to_parse);
+    parsed_csv = $.csv.toArrays(encoded);
     parsed_csv.shift();
     console.log(parsed_csv)
     this.set('attachment', parsed_csv);

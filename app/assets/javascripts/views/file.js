@@ -2,6 +2,7 @@ Wh40kRank.UploadFile = Ember.TextField.extend({
   tagName: 'input',                                     
   attributeBindings: ['name'],                     
   type: 'file',
+  classNames: ['results-file'],
   file: null,
                            
   change: function(e){       
