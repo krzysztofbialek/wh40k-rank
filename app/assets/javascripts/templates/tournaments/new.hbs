@@ -15,9 +15,37 @@
     {{view "Ember.Select" content=names value=type}}
   </div>
 
+  <div class='form-group'>
+    <label for "csv">Plik z wynikami</label><br />
+    {{view Wh40kRank.UploadFile file=csv name="csv" }}
+  </div>
+
   <button class='btn btn-lg btn-primary btn-block' {{action "createTournament"}}>
     Utwórz turniej
   </button>
 
+
 </form>
 
+<table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nazwa</th>
+        <th>Miasto</th>
+        <th>Ranga</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each result in attachment}}
+        <tr>
+          <td>{{result.[1]}}</td>
+          <td>{{result.[2]}} </td>
+          <td>{{result.[3]}}</td>
+          <td>{{result.[4]}}</td>
+          <td>{{result.[5]}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>

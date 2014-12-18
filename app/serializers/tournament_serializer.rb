@@ -4,6 +4,6 @@ class TournamentSerializer < ActiveModel::Serializer
   embed :ids, include: true
 
   def start
-    object.start.strftime("%d-%m-%Y")
+    object.start.strftime("%d-%m-%Y") rescue ''
   end
 end
