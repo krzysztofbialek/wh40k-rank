@@ -7,8 +7,6 @@
 //= require mixins/current_user_proxy
 //= require initializers/current_user_initializer
 //= require jquery.csv-0.71
-//= require lib/encoding-indexes
-//= require lib/encoding
 //= require transforms/results_transform
 //= require ./wh40k_rank
 

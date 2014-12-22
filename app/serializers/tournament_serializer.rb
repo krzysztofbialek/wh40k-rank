@@ -1,5 +1,5 @@
 class TournamentSerializer < ActiveModel::Serializer
-  attributes :id, :name, :city, :start, :type
+  attributes :id, :name, :city, :start, :type, :errors
 
   embed :ids, include: true
 

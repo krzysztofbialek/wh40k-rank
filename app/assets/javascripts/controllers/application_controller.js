@@ -4,5 +4,4 @@ Wh40kRank.ApplicationController = Ember.Controller.extend({
     return this.get('currentUser').signedIn;
   }.property(),
 
-  withTabs: true
 })
