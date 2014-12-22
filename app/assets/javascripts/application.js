@@ -8,6 +8,8 @@
 //= require initializers/current_user_initializer
 //= require jquery.csv-0.71
 //= require transforms/results_transform
+//= require ember-date-picker/dist/ember-date-picker.min.js
+//= require ember-spin-box/dist/ember-spin-box.min.js
 //= require ./wh40k_rank
 
 Wh40kRank = Ember.Application.create({

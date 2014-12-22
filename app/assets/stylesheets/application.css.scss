@@ -15,7 +15,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "grayscale";
+@import 'ember-date-picker/dist/ember-date-picker.min';
+@import 'ember-spin-box/dist/ember-spin-box.min';
 @import "utilities";
 @import "main_rank";
 @import "sticky_footer";
 @import "tournament_new"
+

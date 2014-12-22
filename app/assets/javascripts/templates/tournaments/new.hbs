@@ -16,7 +16,7 @@
           </div>
         {{/if}}
       </div>
-      <div class='form-group'>
+      <div class='form-group' {{bind-attr class="errors.name:has-error"}}>
         <label for "city">Miasto</labelr><br />
         {{input value=city class="form-control" placeholder="Miasto turnieju"}}
         {{#if errors.city }}
@@ -30,17 +30,31 @@
         {{/if}}
       </div>
 
-      <div class='form-group'>
+      <div class='form-group' {{bind-attr class="errors.city:has-error"}} >
         <label for "type">Ranga turnieju</labelr><br />
         {{view "Ember.Select" content=names value=type}}
       </div>
 
-      <div class='form-group'>
+      <div class='form-group' {{bind-attr class="errors.attachment:has-error"}}>
         <label for "csv">Plik z wynikami</label><br />
         {{view Wh40kRank.UploadFile file=csv name="csv" }}
         {{#if errors.attachment }}
           <div class='help-block'>
             {{#each error in errors.attachment}}
+              <span class='attribute-error'>
+                {{error.message}}
+              </span>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+
+      <div class='form-group' {{bind-attr class="errors.name:has-error"}}>
+        {{date-picker-input controls="my-datepicker" class="form-control" value=start placeholder="Start turnieju"}}
+        {{date-picker-controls id="my-datepicker"}}
+        {{#if errors.start }}
+          <div class='help-block'>
+            {{#each error in errors.start}}
               <span class='attribute-error'>
                 {{error.message}}
               </span>
