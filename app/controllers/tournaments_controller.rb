@@ -9,6 +9,7 @@ class TournamentsController < ApplicationController
   end
 
   def create
+    puts tournament_params
     @tournament = Tournament.create(tournament_params)
 
     if @tournament.valid? 
@@ -27,12 +28,12 @@ class TournamentsController < ApplicationController
   private
 
   def render_validation_errors errors
-    puts errors.to_h
     render json: {errors: errors.to_h}, status: 422
   end
 
   def tournament_params
-    params.require(:tournament).permit!
+    params[:tournament][:attachment] ||= []
+    params.require(:tournament).permit(:name, :city, :type, :start, attachment: [] )
   end
 
 end

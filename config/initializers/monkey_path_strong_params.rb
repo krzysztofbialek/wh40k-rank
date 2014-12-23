@@ -1,0 +1,1 @@
+ActionController::Parameters::PERMITTED_SCALAR_TYPES << Array
